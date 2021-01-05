@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import successReducer from './success/success.reducer';
+import successReducer from './reducers/success.reducer';
 
 export default combineReducers({
   success: successReducer,
