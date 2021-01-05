@@ -1,4 +1,4 @@
-import { actionTypes } from '../actions/index';
+import { actionTypes } from '../actions/actions';
 import successReducer from './success.reducer';
 
 test('returns default initial state of "false" when no action is passed', () => {
