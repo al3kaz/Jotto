@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Congrats from '../Congrats/Congrats.component'
 
 class Input extends Component {
    constructor(props) {
