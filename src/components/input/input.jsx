@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import Congrats from '../Congrats/Congrats.component'
+import { guessWord } from '../../redux/actions/actions'
 
 class Input extends Component {
    constructor(props) {
@@ -30,4 +30,4 @@ const mapStateToProps = ({ success }) => {
    return { success }
 }
 
-export default connect(mapStateToProps)(Input);
+export default connect(mapStateToProps, { guessWord })(Input);
