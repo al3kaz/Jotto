@@ -15,7 +15,7 @@ const GuessedWords = (props) => {
           <td>
             {word.guessedWord}
           </td>
-          <td>{word.letterMathCount}</td>
+          <td>{word.letterMatchCount}</td>
         </tr>
       )
     })
