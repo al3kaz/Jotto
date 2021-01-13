@@ -123,7 +123,7 @@
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
-    "testRunner": "C:\\Users\\aleks\\Desktop\\repo\\Jotto\\node_modules\\jest-circus\\runner.js",
+    "testRunner": "C:\\Users\\Alek\\Desktop\\Project\\Testing\\demo\\node_modules\\jest-circus\\runner.js",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",

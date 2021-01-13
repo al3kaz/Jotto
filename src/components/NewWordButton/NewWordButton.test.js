@@ -14,7 +14,7 @@ describe('render', () => {
   test('render without error', () => {
     const wrapper = setup();
     const component = findByTestAttr(wrapper, 'component-new-word-button');
-    expect(component).toBe(1);
+    expect(component.length).toBe(1);
   });
   test('renders no text when `success` prop is false', () => {
     const wrapper = setup({ success: false });
@@ -24,11 +24,16 @@ describe('render', () => {
   test('renders non-empty text when `success` prop is true', () => {
     const wrapper = setup({ success: true });
     const component = findByTestAttr(wrapper, 'component-new-word-button');
-    expect(component.text()).not.ToBe(0);
+    expect(component.text()).not.toBe(0);
   });
   test('does not throw warning with expected props', () => {
     const expectedProps = { success: false, resetAction: () => {} };
     checkProps(NewWordButton, expectedProps);
   });
-  test('calls `resetAction` prop upon button click', () => {});
+  test('calls `resetAction` prop upon button click', () => {
+    const resetActionMock = jest.fn();
+    const wrapper = setup({ success: true, resetAction: { resetActionMock } });
+    const newWordButton = findByTestAttr(wrapper, 'component-new-word-button');
+    newWordButton.simulate('click', { preventDefault() {} });
+  });
 });

@@ -44,7 +44,7 @@ GuessedWords.propTypes = {
   guessedWords: PropTypes.arrayOf(
     PropTypes.shape({
       guessedWord: PropTypes.string.isRequired,
-      letterMathCount: PropTypes.number.isRequired,
+      // letterMathCount: PropTypes.number.isRequired,
     })
   ).isRequired,
 };
