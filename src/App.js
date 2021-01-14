@@ -6,6 +6,7 @@ import GuessedWords from './components/GuessedWords/GuessedWords.component';
 import Congrats from './components/Congrats/Congrats.component';
 import './App.css';
 import NewWordButton from './components/NewWordButton/NewWordButton.component';
+import SecretWordReveal from './components/SecretWordReveal/secretWordReveal.component';
 
 export class UnconnectedApp extends React.Component {
   componentDidMount() {
@@ -18,11 +19,15 @@ export class UnconnectedApp extends React.Component {
         <h1>Jotto</h1>
         <div>The secret word is {this.props.secretWord}</div>
         <Congrats success={this.props.success} />
+        <SecretWordReveal
+          display={this.props.giveUp}
+          secretWord={this.props.secretWord}
+        />
         <NewWordButton
           success={this.props.success}
           resetGame={this.props.resetGame}
         />
-        <Input secretWord={this.props.secretWord} />
+        <Input secretWord={this.props.secretWord} giveUp={this.props.giveUp} />
         <GuessedWords guessedWords={this.props.guessedWords} />
       </div>
     );
@@ -30,8 +35,8 @@ export class UnconnectedApp extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  const { success, guessedWords, secretWord } = state;
-  return { success, guessedWords, secretWord };
+  const { success, guessedWords, secretWord, giveUp } = state;
+  return { success, guessedWords, secretWord, giveUp };
 };
 const actions = {
   getSecretWord,
